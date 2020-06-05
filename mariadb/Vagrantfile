@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|  
+  # Configuramos un nombre a nuestra máquina para que tenga un friendly name en VirtualBox
+  config.vm.provider "virtualbox" do |v|
+    v.name = "MariaDB-Libros"
+  end
+  # Centos 7 es el Box base que hemos elegido
+  config.vm.box = "centos/7"
+  # Port forwarding del host al guest
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
+  # Vamos a montar todos los archivos que se encuentren en el directorio a la carpeta /vagrant del guest
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  # Este es el shell de aprovisionamiento que se ejecutará
+  config.vm.provision "shell", path: "provision.sh"  
+end
