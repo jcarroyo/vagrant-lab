@@ -1,5 +1,7 @@
 create database prestador_libros character set latin1 collate latin1_bin;
 
+use prestador_libros;
+
 -- prestador_libros.autor definition
 CREATE TABLE `autor` (
   `id_autor` bigint(20) NOT NULL AUTO_INCREMENT,
