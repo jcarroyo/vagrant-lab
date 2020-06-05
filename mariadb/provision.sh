@@ -10,6 +10,5 @@ sudo systemctl enable mariadb
 
 mysql -u root < /vagrant/db-provision/1.create_database.sql
 mysql -u root < /vagrant/db-provision/2.create_user.sql
-mysql -u root < /vagrant/db-provision/3.insert_data_movies.sql
 
 echo "END"
